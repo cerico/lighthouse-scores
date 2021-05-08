@@ -1,0 +1,1090 @@
+<html>
+<head>
+<style>
+body {
+  background: #212121;
+  color: #FFF;
+  --color-average: #FFA400;
+  --color-fail: #FF4E42;
+  --color-pass: #0CCE6B;
+
+  --gauge-circle-size: 80px;
+  --gauge-label-font-size: 20px;
+  --gauge-label-line-height: 26px;
+  --gauge-percentage-font-size: 28px;
+  --gauge-wrapper-width: 148px;
+  --score-container-padding: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: white
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    --gauge-circle-size: 72px;
+    --gauge-label-font-size: 14px;
+    --gauge-label-line-height: 20px;
+    --gauge-percentage-font-size: 26px;
+    --gauge-wrapper-width: 112px;
+  }
+}
+
+.lh-scores-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lh-gauge__wrapper--pass {
+  color: var(--color-pass);
+  fill: var(--color-pass);
+  stroke: var(--color-pass);
+}
+
+.lh-gauge__wrapper--average {
+  color: var(--color-average);
+  fill: var(--color-average);
+  stroke: var(--color-average);
+}
+
+.lh-gauge__wrapper--fail {
+  color: var(--color-fail);
+  fill: var(--color-fail);
+  stroke: var(--color-fail);
+}
+
+.lh-gauge {
+  stroke-linecap: round;
+  width: var(--gauge-circle-size);
+  height: var(--gauge-circle-size);
+}
+
+.lh-gauge-base {
+    opacity: 0.1;
+    stroke: var(--circle-background);
+}
+
+.lh-gauge-arc {
+    fill: none;
+    stroke: var(--circle-color);
+    transform-origin: 50% 50%;
+    animation: load-gauge var(--transition-length) ease forwards;
+    animation-delay: 250ms;
+}
+
+.lh-gauge__svg-wrapper {
+  position: relative;
+  height: var(--gauge-circle-size);
+}
+
+@keyframes load-gauge {
+  from { stroke-dasharray: 0 352; }
+}
+
+.lh-gauge__percentage {
+  width: 100%;
+  height: var(--gauge-circle-size);
+  position: absolute;
+  font-size: calc(var(--gauge-circle-size) * 0.34 + 1.3px);
+  line-height: 0;
+  text-align: center;
+  top: calc(var(--score-container-padding) + var(--gauge-circle-size) / 2);
+}
+
+.lh-gauge__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  padding: var(--score-container-padding);
+  --transition-length: 1s;
+  contain: content;
+  will-change: opacity;
+  width: var(--gauge-wrapper-width);
+}
+
+.lh-gauge__label {
+  font-size: var(--gauge-label-font-size);
+  line-height: var(--gauge-label-line-height);
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+.title {
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+  }
+.app {
+  border-bottom: 1px solid;
+}
+</style>
+</head>
+<body class="lh-vars">
+<div class="app">
+<a href="./todmorden-green.netlify.app.html">
+<div class="title">https://todmorden-green.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 336px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">96</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 301px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">86</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 280px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">80</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 224px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">64</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./typology.netlify.app.html">
+<div class="title">https://typology.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./pop-gdp.netlify.app.html">
+<div class="title">https://pop-gdp.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 112px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">32</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 319px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">91</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./responsive-chart.netlify.app.html">
+<div class="title">https://responsive-chart.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 319px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">91</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 319px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">91</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./predictions2020.netlify.app.html">
+<div class="title">https://predictions2020.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 301px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">86</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 277px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">79</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 291px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">83</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./a2cafe.netlify.app.html">
+<div class="title">https://a2cafe.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 343px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">98</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 168px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">48</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 200px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">57</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./vigorous-morse-874485.netlify.app.html">
+<div class="title">https://vigorous-morse-874485.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 333px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">95</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 319px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">91</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./experidocs2.netlify.app.html">
+<div class="title">https://experidocs2.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 343px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">98</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 287px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">82</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 224px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">64</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./cityguessr.com.html">
+<div class="title">https://cityguessr.com/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 186px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">53</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 308px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">88</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 263px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">75</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./ystradynlais.larchtre.es.html">
+<div class="title">https://ystradynlais.larchtre.es/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 343px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">98</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 322px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">92</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./experidocs.netlify.app.html">
+<div class="title">https://experidocs.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 336px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">96</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 287px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">82</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 224px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">64</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./slide-layout.netlify.app.html">
+<div class="title">https://slide-layout.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 333px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">95</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./picture-scroll-vanilla.netlify.app.html">
+<div class="title">https://picture-scroll-vanilla.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 263px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">75</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 277px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">79</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 280px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">80</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 291px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">83</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./sergey-scroll.netlify.app.html">
+<div class="title">https://sergey-scroll.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 347px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">99</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./ice-cream-style.netlify.app.html">
+<div class="title">https://ice-cream-style.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 340px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">97</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 308px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">88</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 351px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">100</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 319px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">91</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./a1cafe.netlify.app.html">
+<div class="title">https://a1cafe.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./io37.netlify.app.html">
+<div class="title">https://io37.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 301px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">86</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 249px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">71</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 322px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">92</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./scrolling-picture-page.netlify.app.html">
+<div class="title">https://scrolling-picture-page.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 231px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">66</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 277px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">79</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 291px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">83</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./cerico.netlify.app.html">
+<div class="title">https://cerico.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 59px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">17</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 266px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">76</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 326px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">93</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 322px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">92</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+<div class="app">
+<a href="./nc-demographics.netlify.app.html">
+<div class="title">https://nc-demographics.netlify.app/</div>
+  <div class="lh-scores-header">
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--fail">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 0px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">0</div>
+    <div class="lh-gauge__label">Performance</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--average">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 277px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">79</div>
+    <div class="lh-gauge__label">Accessibility</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 305px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">87</div>
+    <div class="lh-gauge__label">Best Practices</div>
+  </div>
+    <div class="lh-gauge__wrapper lh-gauge__wrapper--pass">
+    <div class="lh-gauge__svg-wrapper">
+      <svg viewBox="0 0 120 120" class="lh-gauge">
+        <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+        <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" style="transform: rotate(-87.9537deg); stroke-dasharray: 294px, 351.858px;"></circle>
+      </svg>
+    </div>
+    <div class="lh-gauge__percentage">84</div>
+    <div class="lh-gauge__label">SEO</div>
+  </div>
+</div>
+</div>
+</a>
+</div>
+</body>
+</html>

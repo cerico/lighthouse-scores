@@ -1,0 +1,42 @@
+---
+- name: Log in as deploy user and setup ruby, passenger and nginx
+  hosts: localhost
+  connection: local 
+  vars:
+    ansible_python_interpreter: /usr/local/bin/python3
+  tasks:
+    - name: get the date
+      set_fact:
+        date: "{{ ansible_date_time.date }}"
+
+    - name: Display the JSON file content
+      shell: "cat {{ item }}"
+      with_fileglob:
+        - ./observatories/*.json
+      register: observatory
+
+    - name: Iterate Json 
+      set_fact:
+        odata: "{{ (odata | default([])) + [item.stdout | from_json | json_query('[\"HTTP Observatory Report\", Score, Grade, \"Full Report Url\"]')] }}"
+      loop: "{{ observatory.results }}"
+      
+    - name: create obs
+      template:
+        src: observatory.html.j2
+        dest: "{{ playbook_dir }}/observatories/index.html"
+
+    - name: Display the JSON file content
+      shell: "cat {{ item }}"
+      with_fileglob:
+        - ./lighthouses/*.json
+      register: lighthouse
+
+    - name: Iterate Json
+      set_fact:
+        ldata: "{{ (ldata | default([])) + [item.stdout | from_json | json_query('[requestedUrl, categories.*.[title, score]]')] }}"
+      loop: "{{ lighthouse.results }}"
+
+    - name: create lighthouses
+      template:
+        src: lighthouse.html.j2
+        dest: "{{ playbook_dir }}/lighthouses/index.html"
