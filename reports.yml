@@ -6,8 +6,8 @@
     ansible_python_interpreter: /usr/local/bin/python3
   tasks:
     - name: get the date
-      set_fact:
-        date: "{{ ansible_date_time.date }}"
+      shell: "date | awk -F' ' '{print $2,$3,$4}'"
+      register: date
 
     - name: Display the JSON file content
       shell: "cat {{ item }}"

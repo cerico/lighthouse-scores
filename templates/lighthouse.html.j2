@@ -130,7 +130,7 @@ a {
 </style>
 </head>
 <body class="lh-vars">
-<div class="date">Scored: {{ date }}</div>
+<div class="date">Scored: {{ date.stdout }}</div>
 {% for a in ldata %}
 <div class="app">
 <a href="./{{ a[0] |replace("https://", "")|replace("/", "") }}.html">
