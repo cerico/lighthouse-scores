@@ -1,2 +1,4 @@
 lighthouses/*json
 observatories/*json
+lighthouses/[a-h]*.html
+lighthouses/[j-z]*.html
